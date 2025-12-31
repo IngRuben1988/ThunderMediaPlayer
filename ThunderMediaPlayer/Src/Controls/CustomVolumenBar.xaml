@@ -1,0 +1,33 @@
+<ContentView
+    x:Class="ThunderMediaPlayer.Src.Controls.CustomVolumeBar"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <HorizontalStackLayout
+        Spacing="12"
+        Padding="10"
+        VerticalOptions="Center">
+
+        <Label Text="🔈"
+               FontSize="16"
+               VerticalOptions="Center"/>
+
+        <Slider x:Name="VolumeSlider"
+                Minimum="0"
+                Maximum="1"
+                HeightRequest="40"
+                WidthRequest="200"
+                VerticalOptions="Center"
+                Value="1"
+                ValueChanged="OnVolumeChanged"/>
+
+        <Label Text="🔊"
+               FontSize="16"
+               VerticalOptions="Center"/>
+
+        <Label Text="{Binding Source={x:Reference VolumeSlider}, Path=Value, StringFormat='{0:P0}'}"/>
+
+
+    </HorizontalStackLayout>
+
+</ContentView>

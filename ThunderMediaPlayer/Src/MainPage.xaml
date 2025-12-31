@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ThunderMediaPlayer.Src.MainPage"
+    xmlns:controls="clr-namespace:ThunderMediaPlayer.Src.Controls"
+    >
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="30"
+            VerticalOptions="Center">
+
+            <!-- TrackBar -->
+            <controls:CustomTrackBar x:Name="cTrackBar" />
+
+
+            <Button
+                Text="Play (Streaming)"
+                Clicked="OnPlayClicked"/>
+
+            <Button
+                Text="Play Local"
+                Clicked="OnLocalPlayClicked"/>
+
+            <Button
+                Text="Pick Audio"
+                Clicked="OnPickAudioClicked"/>
+
+            <Button
+                Text="Stop"
+                Clicked="OnStopClicked"/>
+
+            <controls:CustomVolumeBar x:Name="volumeControl"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

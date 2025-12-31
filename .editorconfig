@@ -1,0 +1,66 @@
+# EditorConfig ayuda a mantener estilos de codificación consistentes entre editores y IDEs.
+# Más info: https://editorconfig.org
+
+root = true
+
+# Configuración por defecto
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Archivos de configuración y datos (JSON/YAML)
+[*.{json,yml,yaml}]
+indent_size = 2
+
+# Markdown: conservar espacios al final de línea (para saltos de línea)
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# Python: PEP 8 recomienda indentación de 4 espacios
+[*.py]
+indent_size = 4
+max_line_length = 88
+
+# Shell scripts
+[*.{sh,bash}]
+indent_style = space
+indent_size = 2
+
+# Makefiles usan tabs
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+# XML
+[*.xml]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# C#
+[*.cs]
+indent_style = space
+indent_size = 4
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+csharp_new_line_before_open_brace = all
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+
+# Dockerfiles
+[Dockerfile]
+indent_size = 2
+
+# Ignorar cambios de fin de línea en archivos binarios
+[*.{png,jpg,jpeg,gif,ico,pdf,zip}]
+end_of_line = lf
+insert_final_newline = false
+trim_trailing_whitespace = false
