@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="ThunderUI.Src.Components.MusicCoverCard.MusicCoverCard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this">
+
+    <Frame
+        Padding="0"
+        HasShadow="True"
+        CornerRadius="16"
+        HeightRequest="220"
+        WidthRequest="220"
+        BackgroundColor="#1E1E1E">
+
+        <Grid>
+
+            <!-- Imagen de portada -->
+            <Image
+                x:Name="CoverImage"
+                Aspect="AspectFill" />
+
+            <!-- Overlay oscuro (opcional) -->
+
+            <BoxView IsVisible="{Binding ShowOverlay, Source={x:Reference this}}" />
+
+            <!-- Texto -->
+            <VerticalStackLayout
+                Padding="12"
+                VerticalOptions="End"
+                Spacing="2">
+
+                <Label
+                    x:Name="TitleLabel"
+                    TextColor="White"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    LineBreakMode="TailTruncation" />
+
+                <Label
+                    x:Name="ArtistLabel"
+                    TextColor="#DDDDDD"
+                    FontSize="12"
+                    LineBreakMode="TailTruncation" />
+            </VerticalStackLayout>
+
+        </Grid>
+
+    </Frame>
+</ContentView>

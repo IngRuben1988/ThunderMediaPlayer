@@ -1,4 +1,4 @@
-﻿using Plugin.Maui.Audio;
+using Plugin.Maui.Audio;
 using ThunderMediaPlayer.Src.Controls;
 
 namespace ThunderMediaPlayer.Src;
@@ -15,7 +15,23 @@ public partial class MainPage : ContentPage
 
     public MainPage(IAudioManager audioManager)
     {
-        InitializeComponent();
+        //InitializeComponent();
+
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            // Esto imprimirá el error real en la consola de VS Code
+            Console.WriteLine("********* ERROR DE XAML *********");
+            Console.WriteLine(ex.Message);
+            if (ex.InnerException != null)
+                Console.WriteLine(ex.InnerException.Message);
+            Console.WriteLine("*********************************");
+            throw;
+        }
+
         _audioManager = audioManager;
 
         cTrackBar.SeekRequested += seconds =>

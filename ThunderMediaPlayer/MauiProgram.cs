@@ -2,6 +2,8 @@
 using Plugin.Maui.Audio;
 using Microsoft.Extensions.Logging;
 using ThunderMediaPlayer.Src;
+
+using ThunderUI;
 namespace ThunderMediaPlayer;
 
 public static class MauiProgram
@@ -11,6 +13,8 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .UseThunderUI()
 			.UseMauiCommunityToolkitMediaElement()
 			.ConfigureFonts(fonts =>
 			{
@@ -20,7 +24,7 @@ public static class MauiProgram
 
 #if DEBUG
 		builder.Logging.AddDebug();
-#endif	
+#endif
 
 		builder.Services.AddSingleton(AudioManager.Current);
 		builder.Services.AddSingleton<MainPage>();
